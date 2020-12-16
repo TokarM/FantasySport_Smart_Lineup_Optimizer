@@ -7,11 +7,11 @@ Created on Tue Dec 10 09:48:21 2019
 """
 import numpy
 import pandas
-import merging
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from merging_for_model import merge_data
 
+'''
 # Predict poinst using linear regresion
 def reg_points(week, test_week):
     players_csv = merging.merging_ucl(week)
@@ -38,7 +38,7 @@ def reg_points(week, test_week):
     prediction = prediction.set_index('Player')
     
     return prediction
-'''
+
 week = '12.9'
 test_week = '5'
 players_csv = merging.merging_ucl(week)
@@ -50,7 +50,8 @@ for index, row in players_csv.iterrows():
     
 players_csv['Percentage'] = players_csv['Percentage'] / 100
 '''
-my_data = pandas.read_csv('/home/nick/Desktop/DF_simulator/build_model/output.csv', delimiter=',')
+
+my_data = pandas.read_csv('build_model/output.csv', delimiter=',')
 my_data = my_data[['Player','Salary', 'S', 'INT', 'CR', 'CC', 'FC','P','Total_Kicks', 'Win %', 'D', 'M','F',
                    'LIV', 'LEI', 'CHE', 'TOT', 'BHA', 'AVL','BOU', 'SOU', 'Points']]
 X_train = my_data.drop(['Points','Player'], axis = 1)

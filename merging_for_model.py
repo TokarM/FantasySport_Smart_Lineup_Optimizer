@@ -40,7 +40,7 @@ team_dic = {'Liverpool':'LIV',
 
 
 def merge_data(week):
-    directory = '/home/nick/Desktop/DF_simulator/build_model/' + str(week)
+    directory = 'build_model/' + str(week)
     a = pd.read_csv(directory + "_players_stats.csv", header = 1)
     #a = a[['Name','Team','Salary','A', 'SOG', 'S', 'INT','CC','CR','FC', 'FS','TKLW', 'P']]
     a = a.drop(['MIN'], axis = 1)
